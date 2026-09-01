@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../admin.css">
+    <title>Vendas do Funcionário - MCS Café</title>
+</head>
+
+<body>
+    <header class="header">
+        <section>
+            <a href="#" class="logo">
+                <img width="50" height="50" src="../img/logo.png" alt="logo">
+            </a>
+
+            <nav class="navbar">
+                <a href="Produtos.html">produtos</a>
+                <a href="admin.html">vendas</a>
+                <a href="funcionarios.html">funcionarios</a>
+            </nav>
+        </section>
+    </header>
+
+    <div class="painelVendas-contrainer">
+        <section id="vendas-funcionario">
+            <div class="content">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                    <h3>Vendas do Dia: <span style="color: var(--main-color);" id="nome-funcionario">MURILO CAMPOS SANTOS</span></h3>
+                    <a href="funcionarios.html" class="btn">Voltar aos Funcionários</a>
+                </div>
+
+                <div class="cards">
+                    <div class="card">
+                        <h2 id="total-vendas-func">10</h2>
+                        <p>vendas hoje</p>
+                    </div>
+
+                    <div class="card">
+                        <h2 id="faturamento-func">R$ 48,50</h2>
+                        <p>Faturamento do Dia</p>
+                    </div>
+
+                    <div class="card">
+                        <h2 id="ticket-medio">R$ 13,63</h2>
+                        <p>Ticket Médio</p>
+                    </div>
+
+                    <div class="card">
+                        <h2 id="produto-top-func">Café Coado</h2>
+                        <p>Mais Vendido</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="graficos">
+        <canvas id="graficoVendasFuncionario"></canvas>
+        <canvas id="graficoHoraFuncionario"></canvas>
+    </div>
+
+    <footer>
+        <a href="funcionarios.html" class="logo">
+            <img src="../img/logo.png" width="100px" alt="logo" />
+        </a>
+        <p>© 2026-2026, mcscafé.com, Inc.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const produtosVendidos = [
+            "Café Coado",
+            "Espresso",
+            "Cappuccino",
+            "Mocha"
+        ];
+
+        const quantidades = [10, 5, 2, 1];
+
+        const paletaCafe = [
+            '#d3ad7f',
+            '#b88e5d',
+            '#8c653d',
+            '#5c3d21'
+        ];
+
+        Chart.defaults.color = '#ffffff';
+        Chart.defaults.font.family = 'Outfit, sans-serif';
+
+        new Chart(document.getElementById("graficoVendasFuncionario"), {
+            type: "bar",
+            data: {
+                labels: produtosVendidos,
+                datasets: [{
+                    label: "Itens Vendidos",
+                    data: quantidades,
+                    backgroundColor: paletaCafe,
+                    borderColor: '#13131a',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false },
+                    title: {
+                        display: true,
+                        text: 'Produtos Vendidos Pelo Funcionário',
+                        color: '#d3ad7f',
+                        font: { size: 16, weight: 'bold' }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { color: '#ffffff' },
+                        grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                    },
+                    x: {
+                        ticks: { color: '#ffffff' },
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        new Chart(document.getElementById("graficoHoraFuncionario"), {
+            type: "line",
+            data: {
+                labels: ["08:00", "10:00", "12:00", "14:00", "16:00"],
+                datasets: [{
+                    label: "Vendas por Horário",
+                    data: [3, 7, 4, 2, 2],
+                    borderColor: '#d3ad7f',
+                    backgroundColor: 'rgba(211, 173, 127, 0.2)',
+                    fill: true,
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false },
+                    title: {
+                        display: true,
+                        text: 'Desempenho de Vendas ao Longo do Dia',
+                        color: '#d3ad7f',
+                        font: { size: 16, weight: 'bold' }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { color: '#ffffff' },
+                        grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                    },
+                    x: {
+                        ticks: { color: '#ffffff' },
+                        grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/cart.css">
+    <title>café Mcs</title>
+</head>
+
+<body>
+    <header class="header">
+        <section>
+            <a href="menu.html" class="logo">
+                <img width="50" height="50" src="../img/logo.png" alt="logo">
+            </a>
+
+            <nav class="navbar">
+                <a href="index.html">Home</a>
+                <a href="about.html">Sobre</a>
+                <a href="menu.html">Menu</a>
+                <a href="review.html">Avaliações</a>
+                <a href="address.html">Endereço</a>
+            </nav>
+
+            <div class="icons">
+                <a href="cart.html">
+                    <img width="35" height="35" src="../img/cart.png">
+                    <span id="cart-count">0</span>
+                </a>
+            </div>
+        </section>
+    </header>
+
+
+<section class="menu" id="menu">
+        <h2 class="title">Nosso <span>Menu</span></h2>
+
+        <div class="box-contrainer">
+            <div class="box">
+                <a href="Café-Coado.html">
+                    <img src="../img/menu-1.png" alt="item-1">
+                </a>
+                <h3>Café coado</h3>
+                <button class="btn" onclick="adicionarCarrinho('café Coado', 3.00)">
+                    <div class="price">R$ <del>4,50</del> 3,00</div>
+                    <a href="cart.html" class="btn">Adicionar Ao Carrinho</a>
+                </button>
+            </div>
+
+            <div class="box">
+                <a href="Espresso.html">
+                    <img src="../img/menu-2.png" alt="item-2">
+                </a>
+                <h3>Espresso</h3>
+                <button class="btn" onclick="adicionarCarrinho('Espresso', 5.00)">
+                    <div class="price">R$ <del>7,50</del> 5,00</div>
+                    <a href="cart.html" class="btn">Adicionar Ao Carrinho</a>
+                </button>
+            </div>
+
+            <div class="box">
+                <a href="Mocha.html">
+                    <img src="../img/menu-3.png" alt="item-3">
+                </a>
+                <h3>Mocha</h3>
+                <button class="btn" onclick="adicionarCarrinho('Mocha', 6.00)">
+                    <div class="price">R$ <del>8,50</del> 6,00</div>
+                    <a href="cart.html" class="btn">Adicionar Ao Carrinho</a>
+                </button>
+            </div>
+
+            <div class="box">
+                <a href="Cappuccino.html">
+                    <img src="../img/menu-4.png" alt="item-4">
+                </a>
+                <h3>Cappuccino</h3>
+                <button class="btn" onclick="adicionarCarrinho('Cappuccino', 10.00)">
+                    <div class="price">R$ <del>12,50</del> 10,00</div>
+                    <a href="cart.html" class="btn">Adicionar Ao Carrinho</a>
+                </button>
+            </div>
+
+            <div class="box">
+                <a href="Cold-Brew.html">
+                    <img src="../img/menu-5.png" alt="item-5">
+                </a>
+                <h3>Cold Brew</h3>
+                <button class="btn" onclick="adicionarCarrinho('Cold Brew', 13.00)">
+                    <div class="price">R$ <del>15,50</del> 13,00</div>
+                    <a href="cart.html" class="btn">Adicionar Ao Carrinho</a>
+                </button>
+            </div>
+
+            <div class="box">
+                <a href="Macchiato.html">
+                    <img src="../img/menu-6.png" alt="item-6">
+                </a>
+                <h3>Macchiato</h3>
+                <button class="btn" onclick="adicionarCarrinho('Macchiato', 15.00)">
+                    <div class="price">R$ <del>20,50</del> 15,00</div>
+                    <a href="cart.html" class="btn">Adicionar Ao Carrinho</a>
+                </button>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <a href="menu.html" class="logo">
+        <img src="../img/logo.png" width="100px" alt="logo">
+        </a>
+        <p>© 2026-2026, mcscafé.com, Inc.</p>
+    </footer>
+
+</body>
+</html>

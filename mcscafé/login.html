@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <title>login da pagina</title>
+</head>
+
+<body>
+    <main class="login-container">
+        <div class="login-box">
+            <h1>MCS CAFÉ</h1>
+            <p>Faça login para acessar sua conta.</p>
+            <form>
+                <div class="input-box">
+                    <label>E-mail</label>
+                    <input type="email" placeholder="Digite seu e-mail">
+                </div>
+
+                <div class="input-box">
+                    <label>Senha</label>
+                    <input type="password" placeholder="Digite sua senha">
+                </div>
+
+                <div class="tipo-login">
+                    <label>
+                        <input type="radio" name="tipo" checked>
+                        Cliente
+                    </label>
+
+                    <label>
+                        <input type="radio" name="tipo">
+                        Administrador
+                    </label>
+                    
+                    <label>
+                        <input type="radio" name="tipo">
+                        Funcionário
+                    </label>
+                </div>
+
+                <button type="submit">
+                    Entrar
+                </button>
+                <a href="alterarSenha.html" class="esqueci">Esqueceu sua senha?</a>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <a href="#" class="logo">
+            <img src="./img/logo.png" width="100px" alt="logo">
+        </a>
+        <p>© 2026-2026, mcscafé.com, Inc.</p>
+    </footer>
+    <script>document.addEventListener('DOMContentLoaded', () => {
+    const loginForm = document.getElementById('loginForm');
+
+    if (loginForm) {
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+
+            try {
+                const response = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email, senha })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    alert('Login efetuado com sucesso!');
+                    // Redirecione se desejar: window.location.href = 'dashboard.html';
+                } else {
+                    alert(data.message);
+                }
+            } catch (error) {
+                console.error('Erro na requisição:', error);
+                alert('Erro ao conectar com o servidor.');
+            }
+        });
+    }
+});</script>
+</body>
+
+</html>

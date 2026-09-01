@@ -1,0 +1,176 @@
+#cart-page{
+    align-items: center;
+    position: absolute;
+    display: flex;
+}
+
+#cart-page #total-carrinho .cart-total{
+    align-items: center;
+    display: inline;
+    top: auto;
+    right: 100%;
+    
+}
+
+.cart-icon{
+    position:relative;
+    display:inline-block;
+    align-items:center;
+    flex-direction: column !important;
+}
+
+#cart-count {
+    position: absolute;
+    background: var(--main-color);
+    color: white;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: bold;
+    top: -40px;
+    right: -8px;
+    left: 50%;
+}
+
+.cart-left{
+   display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #111010;
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    padding: 2rem;
+    width: 100%;
+    min-width: 250px; 
+    box-sizing: border-box;
+    border: 1px solid transparent;
+}
+
+.cart-left h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    text-decoration: none !important;
+    margin-bottom: 1rem;
+    border-bottom: none !important;
+    padding-bottom: 1rem;
+    border-radius: 50%;
+}
+
+.cart-left h1, #total-carrinho{
+    width: 100%;
+    text-align: center;
+}
+
+.cart-left button{
+    width: 100%;
+    align-items: center;
+    background: var(--main-color);
+    color: #111010;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.cart-count .btn {
+    background: var(--main-color);
+    color: #fff;
+    padding: 1rem 3rem;
+    display: inline-block;
+    font-size: 1.6rem;
+    cursor: pointer;
+    border-radius: 3.5px;
+    margin-top: 1rem;
+}
+
+.cart-count .btn:hover {
+    letter-spacing: 0.1rem;
+}
+
+
+.cart-left button:hover{
+    direction: column;
+    text-align: center;
+    transform: scale(1.10);
+    background: #c49164;
+}
+
+.cart-left .box-contrainer .box:hover {
+    background-color: #fff;
+}
+
+.butoon{
+    text-align: center;
+    direction: column;
+    color: #000;
+}
+
+.cart-total h2{
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+}
+
+
+#total-carrinho{
+    color: #fff;
+    text-decoration: none;
+}
+
+#total{
+    color: #fff;
+    text-align: center;
+    font-size: 1.8rem;
+    margin-top: 1rem;
+}
+
+.lista-carrinho{
+    color: #fff;
+    text-align: center;
+    font-size: 2rem;
+    display: flex;
+}
+
+@media (max-width: 480px) {
+    .cart-left {
+        max-width: 100%; /* Ocupa a largura total da tela no celular */
+        padding: 1.5rem; /* Reduz o espaçamento interno */
+        border-radius: 15px; /* Bordas menos arredondadas em telas pequenas */
+    }
+
+    .cart-left h1 {
+        font-size: 1.8rem; /* Diminui o título para não quebrar linha abruptamente */
+    }
+
+    .cart-left button, .cart-count .btn {
+        font-size: 1.4rem; /* Diminui o texto dos botões */
+        padding: 0.8rem; /* Botões ligeiramente menores para tocar com o dedo */
+    }
+
+    #cart-count {
+        width: 18px; /* Ajusta o tamanho da bolinha de notificação */
+        height: 18px;
+        font-size: 1.1rem;
+    }
+}
+
+/* Tablets (De 481px até 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .cart-left {
+        max-width: 80%; /* Alarga o container para aproveitar o espaço do tablet */
+    }
+    
+    .cart-left h1 {
+        font-size: 2.2rem;
+    }
+}

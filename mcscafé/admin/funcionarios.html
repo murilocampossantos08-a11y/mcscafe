@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../admin.css">
+    <title>Funcionários - MCS Café</title>
+</head>
+
+<body>
+    <header class="header">
+        <section>
+            <a href="#" class="logo">
+                <img width="50" height="50" src="../img/logo.png" alt="logo">
+            </a>
+
+            <nav class="navbar">
+                <a href="Produtos.html">produtos</a>
+                <a href="admin.html">vendas</a>
+                <a href="funcionarios.html">funcionarios</a>
+            </nav>
+            <a href="#cadastrar" class="btn" onclick="abrirModalCadastro()">cadastrar novo funcionario</a>
+        </section>
+    </header>
+
+    <div class="funcionarios-contrainer">
+        <section id="funcionarios">
+            <div class="funcionarios">
+                <h3>funcionarios</h3>
+            </div>
+        </section>
+    </div>
+
+    <!-- Seção Principal: Lista de Funcionários / Vendas do Dia -->
+    <section class="cadastrados" id="cadastrados">
+        <h3 class="title">Nossos <span>funcionarios</span></h3>
+
+        <!-- Lista de Cards de Funcionários -->
+        <div class="funcionarios-linha" id="lista-funcionarios">
+            <div calss="info-principal">
+                <img src="../img/funcionario1.png" alt="MURILO CAMPOS SANTOS">
+                <h2>MURILO CAMPOS SANTOS</h2>
+            </div>
+            <a href="funcionario.html" class="btn-linha">vendas do dia</a>
+            <button class="btn"
+                onclick="verVendasFuncionario('MURILO CAMPOS SANTOS', 10, 48.50, ['Café Coado', 'Espresso', 'Cappuccino'], [10, 5, 3])">vendas
+                do dia</button>
+        </div>
+
+        <div calss="info-principal">
+            <img src="../img/funcionario2.png" alt="ANA PAULA SILVA">
+            <h2>ANA PAULA SILVA</h2>
+            <p class="cargo">Atendente</p>
+            <button class="btn"
+                onclick="verVendasFuncionario('ANA PAULA SILVA', 0, 0.00, ['Cold Brew', 'Mocha', 'Macchiato'], [6, 4, 2])">vendas
+                do dia</button>
+        </div>
+
+        <div calss="info-principal"></div>
+        <img src="../img/funcionario3.png" alt="CARLOS EDUARDO">
+        <h2>CARLOS EDUARDO</h2>
+        <p class="cargo">Caixa</p>
+        <button class="btn"
+            onclick="verVendasFuncionario('CARLOS EDUARDO', 0, 0.00, ['Espresso', 'Café Coado', 'Cappuccino'], [12, 8, 5])">vendas
+            do dia</button>
+        </div>
+        </div>
+
+        <!-- Seção Dinâmica: Vendas do Dia do Funcionário Selecionado -->
+        <div id="painel-vendas-funcionario" class="painel-vendas-func" style="display: none; margin-top: 40px;">
+            <div class="detalhes-header">
+                <h3 class="title" style="margin-bottom: 10px;">Vendas do Dia: <span id="nome-funcionario-vendas"></span>
+                </h3>
+                <button class="btn" onclick="fecharVendasFuncionario()" style="margin-bottom: 20px;">← Voltar para
+                    lista</button>
+            </div>
+
+            <div class="cards">
+                <div class="card">
+                    <h2 id="func-total-vendas">0</h2>
+                    <p>Vendas Hoje</p>
+                </div>
+                <div class="card">
+                    <h2 id="func-faturamento">R$ 0,00</h2>
+                    <p>Faturamento do Dia</p>
+                </div>
+                <div class="card">
+                    <h2 id="func-ticket-medio">R$ 0,00</h2>
+                    <p>Ticket Médio</p>
+                </div>
+            </div>
+
+            <div class="graficos" style="margin-top: 30px;">
+                <canvas id="graficoVendasFuncionario"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <a href="funcionarios.html" class="logo">
+            <img src="../img/logo.png" width="100px" alt="logo" />
+        </a>
+        <p>© 2026-2026, mcscafé.com, Inc.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        let chartFuncionario = null;
+
+        function verVendasFuncionario(nome, totalVendas, faturamento, itens, quantidades) {
+            // Atualiza informações no painel
+            document.getElementById('nome-funcionario-vendas').innerText = nome;
+            document.getElementById('func-total-vendas').innerText = totalVendas;
+            document.getElementById('func-faturamento').innerText = `R$ ${faturamento.toFixed(2).replace('.', ',')}`;
+
+            const ticketMedio = totalVendas > 0 ? (faturamento / totalVendas) : 0;
+            document.getElementById('func-ticket-medio').innerText = `R$ ${ticketMedio.toFixed(2).replace('.', ',')}`;
+
+            // Exibe a área de vendas e esconde a lista
+            document.getElementById('lista-funcionarios').style.display = 'none';
+            document.getElementById('painel-vendas-funcionario').style.display = 'block';
+
+            // Rola a página suavemente até o painel
+            document.getElementById('painel-vendas-funcionario').scrollIntoView({ behavior: 'smooth' });
+
+            // Renderiza o gráfico do funcionário
+            renderizarGraficoFuncionario(itens, quantidades);
+        }
+
+        function fecharVendasFuncionario() {
+            document.getElementById('painel-vendas-funcionario').style.display = 'none';
+            document.getElementById('lista-funcionarios').style.display = 'grid';
+        }
+
+        function renderizarGraficoFuncionario(itens, quantidades) {
+            const ctx = document.getElementById("graficoVendasFuncionario").getContext("2d");
+
+            if (chartFuncionario) {
+                chartFuncionario.destroy();
+            }
+
+            const paletaCafe = [
+                '#d3ad7f',
+                '#b88e5d',
+                '#8c653d',
+                '#5c3d21',
+                '#3a2412',
+                '#f4e3c5'
+            ];
+
+            Chart.defaults.color = '#ffffff';
+            Chart.defaults.font.family = 'Outfit, sans-serif';
+
+            chartFuncionario = new Chart(ctx, {
+                type: "bar",
+                data: {
+                    labels: itens,
+                    datasets: [{
+                        label: "Itens Vendidos",
+                        data: quantidades,
+                        backgroundColor: paletaCafe,
+                        borderColor: '#13131a',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    plugins: {
+                        legend: { display: false },
+                        title: {
+                            display: true,
+                            text: 'Itens Mais Vendidos Hoje pelo Funcionário',
+                            color: '#d3ad7f',
+                            font: { size: 16, weight: 'bold' }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: { color: '#ffffff' },
+                            grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                        },
+                        x: {
+                            ticks: { color: '#ffffff' },
+                            grid: { display: false }
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

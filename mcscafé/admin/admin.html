@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="admin.css">
+  <title>painel de Vendas</title>
+</head>
+
+<body>
+  <header class="header">
+    <section>
+      <a href="#" class="logo">
+        <img width="50" height="50" src="../img/logo.png" alt="logo" />
+      </a>
+
+      <nav class="navbar">
+        <a href="Produtos.html">produtos</a>
+        <a href="admin.html">vendas</a>
+        <a href="funcionarios.html">Funcionários</a>
+      </nav>
+    </section>
+  </header>
+
+  <div class="painelVendas-contrainer">
+    <section id="vendas">
+      <div class="content">
+        <h3>painel de vendas</h3>
+        <div class="cards">
+          <div class="card">
+            <h2 id="total-vendas">10</h2>
+            <p>vendas hoje</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2 id="faturamento">R$ 100,00</h2>
+          <p>Faturamento</p>
+        </div>
+
+        <div class="card">
+          <h2 id="clientes">7</h2>
+          <p>Clientes</p>
+        </div>
+
+        <div class="card">
+          <h2 id="produto-top">café Coado</h2>
+          <p>Mais Vendido</p>
+        </div>
+      </div>
+    </section>
+    <div class="graficos">
+      <canvas id="graficoProdutos"></canvas>
+    </div>
+  </div>
+
+  <footer>
+    <a href="admin.html" class="logo">
+      <img src="../img/logo.png" width="100px" alt="logo" />
+    </a>
+    <p>© 2026-2026, mcscafé.com, Inc.</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>const produtos = [
+      "Café Coado",
+      "Espresso",
+      "Mocha",
+      "Cappuccino",
+      "Cold Brew",
+      "Macchiato"
+    ];
+
+    const vendas = [20, 5, 2, 7, 1, 4];
+
+    const paletaCafe = [
+      '#d3ad7f',
+      '#b88e5d',
+      '#8c653d',
+      '#5c3d21',
+      '#3a2412',
+      '#f4e3c5'
+    ];
+
+    Chart.defaults.color = '#ffffff';
+    Chart.defaults.font.family = 'Outfit, sans-serif';
+
+    new Chart(document.getElementById("graficoProdutos"), {
+
+      type: "pie",
+      data: {
+        labels: produtos,
+        datasets: [{
+          label: "Quantidade Vendida",
+          data: vendas,
+          backgroundColor: paletaCafe,
+          borderColor: '#13131a',
+          borderWidth: 2
+        }]
+      },
+
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            display: false
+          }
+        }
+      }
+    });
+
+
+    new Chart(document.getElementById("graficoVendas"), {
+      type: "doughnut",
+      data: {
+        labels: produtos,
+        datasets: [{
+          label: "quantidade de vendas",
+          data: [vendas]
+        }]
+      },
+
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        plungins: {
+          legend: {
+            display: false
+          },
+          title: {
+            display: true,
+            text: 'mais vendidos',
+            color: "#d3ad7f",
+            font: {size: 16, weight: bold}
+          }
+        }
+      }
+    });
+
+    new Chart(document.getElementById("graficoVendas"), {
+      type: "doughnut",
+      data: {
+        labels: produtos,
+        datasets: [{
+          label: "Quantidade de Vendas",
+          data: vendas,
+          backgroundColor: paletaCafe,
+          borderColor: '#13131a',
+          borderWidth: 2
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              boxWidth: 12,
+              padding: 15
+            }
+          },
+          title: {
+            display: true,
+            text: 'Distribuição de Vendas',
+            color: '#d3ad7f',
+            font: {size: 16, weight: 'bold'}
+          }
+        }
+      }
+    });</script>
+</body>
+
+</html>

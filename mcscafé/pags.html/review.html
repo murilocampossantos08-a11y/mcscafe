@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/cart.css">
+    <title>café Mcs</title>
+</head>
+
+<body>
+    <header class="header">
+        <section>
+            <a href="index.html" class="logo">
+                <img width="50" height="50" src="../img/logo.png" alt="logo">
+            </a>
+
+            <nav class="navbar">
+                <a href="index.html">Home</a>
+                <a href="about.html">Sobre</a>
+                <a href="menu.html">Menu</a>
+                <a href="review.html">Avaliações</a>
+                <a href="address.html">Endereço</a>
+            </nav>
+
+            <div class="icons">
+                <a href="cart.html">
+                    <img width="35" height="35" src="../img/cart.png">
+                    <span id="cart-count">0</span>
+                </a>
+            </div>
+        </section>
+    </header>
+
+
+    <section class="review" id="review">
+        <button class="prev-review">❮</button>
+        <h2 class="title">Nossos <span>Clientes</span></h2>
+        <div class="review-slider">
+            <div class="box active">
+                <p>Sensacional! Sou daquelas que não começa o dia sem um bom café, e esse aqui superou muito. Dá pra
+                    sentir que o café diferente, não tem aquele amargor queimado de café ruim.
+                    produto top, Recomendo muito!</p>
+                <img src="../img/pic-1.png" alt="foto-cliente" class="user">
+                <h3>paula fernanda</h3>
+                <div class="stars">
+                    <img width="45" height="45" src="../img/5estrelas.png" alt="5 estrelas">
+                </div>
+            </div>
+
+            <div class="box">
+                <p>Cara, que café sensacional! Comprei meio sem saber o que esperar e me surpreendi demais. O cheiro
+                    quando abre o pacote já entrega a qualidade. Dá de 10 a 0 nesses cafés comuns de mercado. Vale cada
+                    centavo, virou meu vício diário.</p>
+                <img src="../img/pic-2.png" alt="foto-cliente" class="user">
+                <h3>derick campos</h3>
+                <div class="stars">
+                    <img width="45" height="45" src="../img/5estrelas.png" alt="5 estrelas">
+                </div>
+            </div>
+
+            <div class="box">
+                <p>Com certeza vou virar cliente fixo. Podem comprar sem medo!</p>
+                <img src="../img/pic-3.png" alt="foto-cliente" class="user">
+                <h3>carlos alberto</h3>
+                <div class="stars">
+                    <img width="45" height="45" src="../img/5estrelas.png">
+                </div>
+            </div>
+        </div>
+        <button class="next-review">❯</button>
+
+
+    </section>
+
+    <footer>
+        <a href="review.html" class="logo">
+            <img src="../img/logo.png" width="100px" alt="logo">
+        </a>
+        <p>© 2026-2026, mcscafé.com, Inc.</p>
+    </footer>
+
+    <script>
+        const reviews = document.querySelectorAll('.review-slider .box');
+        const prevReview = document.querySelector('.prev-review');
+        const nextReview = document.querySelector('.next-review');
+
+        let currentReview = 0;
+
+        function showReview(index) {
+
+            if (reviews.length === 0) return;
+            reviews.forEach(review => {
+                review.classList.remove('active');
+            });
+            reviews[index].classList.add('active');
+        }
+
+        if (nextReview) {
+            nextReview.addEventListener('click', () => {
+                currentReview++;
+                if (currentReview >= reviews.length) {
+                    currentReview = 0;
+                }
+
+                showReview(currentReview);
+            });
+        }
+
+        if (prevReview) {
+            prevReview.addEventListener('click', () => {
+                currentReview--;
+                if (currentReview < 0) {
+                    currentReview = reviews.length - 1;
+                }
+
+                showReview(currentReview);
+            });
+        }
+
+        // Troca automática a cada 3 segundos
+        if (reviews.length > 0) {
+            showReview(currentReview);
+            setInterval(() => {
+                currentReview++;
+                if (currentReview >= reviews.length) {
+                    currentReview = 0;
+                }
+
+                showReview(currentReview);
+            }, 3000);
+        }
+
+        // ==================== CARREGAMENTO ====================
+
+        document.addEventListener("DOMContentLoaded", () => {
+            atualizarCarrinho();
+            exibirCarrinho();
+        });</script>
+
+</body>
+
+</html>

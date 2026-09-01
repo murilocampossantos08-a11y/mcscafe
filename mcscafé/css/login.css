@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+:root {
+    --main-color: #d3ad7f;
+    --black: #13131a;
+    --bg: #010103;
+    --border: 0.1rem solid rgba(255, 255, 255, 0.3);
+    font-size: 10px;
+}
+
+body{
+    margin:0;
+    font-family:Arial;
+    background:var(--bg);
+    display:flex;
+    justify-content:center;
+    flex-direction: column;
+    align-items:center;
+    min-height:100vh
+}
+
+.login-box{
+    width:400px;
+    background:#1b1b1b;
+    padding:45px;
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+}
+
+h1,p,label{
+    color:#fff;
+}
+
+p{
+    color:#bbb;
+    text-align: center;
+}
+.input{
+    margin:18px 0;
+    text-align:left
+}
+
+input[type=email],input[type=password]{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:#2a2a2a;
+    color:#fff;
+    box-sizing:border-box;
+}
+
+/* Container que envolve os radio buttons e seus textos */
+.radio {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Espaça igualmente os itens na linha */
+  gap: 12px;                      /* Distância entre cada opção */
+  width: 100%;
+  margin: 15px 0;
+}
+
+/* Estilo individual de cada opção (radio + texto) */
+.tipo-login {
+  display: flex;
+  align-items: center;
+  gap: 6px;                       /* Espaço entre o círculo e o texto */
+  font-size: 14px;
+  color: #ffffff;
+  white-space: nowrap;            /* Impede que o texto quebre a linha */
+  cursor: pointer;
+}
+
+.tipo{
+    display:flex;
+    justify-content:space-around;
+    margin:20px 0;
+    color:#fff;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#c79b63;
+    color:#fff;
+    font-size:16px;
+    cursor:pointer;
+}
+
+a{
+    display:block;
+    margin-top:15px;
+    color:#c79b63;
+    text-decoration:none;
+}
+
+.logo{
+    color: #0a0a0a;
+    margin-right: 10px;
+}
+
+.logo img{
+    cursor: pointer;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #13131a;
+    display: grid;
+}
+
+@media (max-width: 900px){
+
+}
+
+@media (max-width: 480px){
+    
+}

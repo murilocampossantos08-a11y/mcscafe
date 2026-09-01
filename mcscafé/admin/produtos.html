@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../admin.css">
+    <link rel="stylesheet" href="">
+    <title>cafés</title>
+</head>
+
+<body>
+    <header class="header">
+        <section>
+            <a href="produtos.html" class="logo">
+                <img width="50" height="50" src="../img/logo.png" alt="logo">
+            </a>
+
+            <nav class="navbar">
+                <a href="Produtos.html">produtos</a>
+                <a href="admin.html">vendas</a>
+                <a href="funcionarios.html">funcionarios</a>
+            </nav>
+            <a href="produtos.html" class="btn">adicionar</a>
+        </section>
+    </header>
+
+<script>const produtos = [
+      "Café Coado",
+      "Espresso",
+      "Mocha",
+      "Cappuccino",
+      "Cold Brew",
+      "Macchiato"
+    ];
+
+    const vendas = [20, 5, 2, 7, 1, 4];
+
+    const paletaCafe = [
+      '#d3ad7f',
+      '#b88e5d',
+      '#8c653d',
+      '#5c3d21',
+      '#3a2412',
+      '#f4e3c5'
+    ];
+
+    Chart.defaults.color = '#ffffff';
+    Chart.defaults.font.family = 'Outfit, sans-serif';
+
+    new Chart(document.getElementById("graficoProdutos"), {
+
+      type: "pie",
+      data: {
+        labels: produtos,
+        datasets: [{
+          label: "Quantidade Vendida",
+          data: vendas,
+          borderWidth: 1
+        }]
+      },
+
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            display: false
+          }
+        }
+      }
+});</script>
+</body>
+</html>

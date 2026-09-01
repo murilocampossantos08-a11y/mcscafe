@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/cart.css">
+    <title>café Mcs</title>
+</head>
+
+<body>
+    <header class="header">
+        <section>
+            <a href="index.html" class="logo">
+                <img width="50" height="50" src="../img/logo.png" alt="logo">
+            </a>
+
+            <nav class="navbar">
+                <a href="index.html">Home</a>
+                <a href="about.html">Sobre</a>
+                <a href="menu.html">Menu</a>
+                <a href="review.html">Avaliações</a>
+                <a href="address.html">Endereço</a>
+            </nav>
+
+            <div class="icons">
+                <a href="cart.html">
+                    <img width="35" height="35" src="../img/cart.png">
+                    <span id="cart-count">0</span>
+                </a>
+            </div>
+        </section>
+    </header>
+
+
+    <section class="produto">
+        <img src="../img/menu-6.png" alt="Macchiato">
+        <section class="menu" id="menu"></section>
+        <h1>Macchiato</h1>
+        <p>Café intenso, preparado com grãos selecionados.</p>
+        <p>Preço: R$<del>20,50</del> 15,00</p>
+        <button class="btn" onclick="adicionarCarrinho('Macchiato', 15.00)">
+            Adicionar ao Carrinho</button>
+        <span id="cart-count">0</span>
+        </a>
+        <a href="menu.html" class="btn">Voltar ao Menu</a>
+    </section>
+
+    <footer>
+        <a href="macchiato.html" class="logo">
+            <img src="../img/logo.png" width="100px" alt="logo">
+        </a>
+        <p>© 2026-2026, mcscafé.com, Inc.</p>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/cart.css">
+    <title>café Mcs</title>
+</head>
+
+<body>
+    <header class="header">
+        <section>
+            <a href="index.html" class="logo">
+                <img width="50" height="50" src="../img/logo.png" alt="logo">
+            </a>
+
+            <nav class="navbar">
+                <a href="index.html">Home</a>
+                <a href="about.html">Sobre</a>
+                <a href="menu.html">Menu</a>
+                <a href="review.html">Avaliações</a>
+                <a href="address.html">Endereço</a>
+            </nav>
+
+            <div class="icons">
+                <a href="cart.html">
+                    <img width="35" height="35" src="../img/cart.png">
+                    <span id="cart-count">0</span>
+                </a>
+            </div>
+        </section>
+    </header>
+
+
+    <section class="produto">
+        <img src="../img/menu-1.png" alt="Café-Coado">
+        <section class="menu" id="menu"></section>
+        <h1>Café-Coado</h1>
+        <p>Café intenso, preparado com grãos selecionados.</p>
+        <p>Preço: R$<del>4,50</del> 3,00</p>
+        <button class="btn" onclick="adicionarCarrinho('Café-Coado', 3.00)">
+            Adicionar ao Carrinho</button>
+        <span id="cart-count">0</span>
+        </a>
+        <a href="menu.html" class="btn">Voltar ao Menu</a>
+    </section>
+
+    <footer>
+        <a href="café-coado.html" class="logo">
+            <img src="../img/logo.png" width="100px" alt="logo">
+        </a>
+        <p>© 2026-2026, mcscafé.com, Inc.</p>
+    </footer>
+
+    <script>
+        let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+        // Adiciona produto ao carrinho
+        function adicionarCarrinho(nome, preco) {
+            const itemExistente = carrinho.find(item => item.nome === nome);
+            if (itemExistente) {
+                itemExistente.quantidade++;
+            } else {
+                carrinho.push({
+                    nome: nome,
+                    preco: preco,
+                    quantidade: 1
+                });
+            }
+
+            localStorage.setItem("carrinho", JSON.stringify(carrinho));
+            atualizarCarrinho();
+            alert(nome + " adicionado ao carrinho!");
+        }
+
+        // Atualiza contador do carrinho
+        function atualizarCarrinho() {
+            const contador = document.getElementById("cart-count");
+            if (contador) {
+                const quantidadeTotal = carrinho.reduce(
+                    (total, item) => total + item.quantidade,
+                    0
+                );
+                contador.innerText = quantidadeTotal;
+            }
+        }
+
+        // Remove item do carrinho pelo índice
+        function removerItem(indice) {
+            if (carrinho[indice].quantidade > 1) {
+                carrinho[indice].quantidade--;
+            } else {
+                carrinho.splice(indice, 1);
+            }
+            localStorage.setItem("carrinho", JSON.stringify(carrinho));
+            atualizarCarrinho();
+            exibirCarrinho();
+        }
+
+        // Exibe os itens do carrinho
+        function exibirCarrinho() {
+            const lista = document.getElementById("lista-carrinho");
+            const totalElemento = document.getElementById("total-carrinho");
+            if (!lista) return;
+            lista.innerHTML = "";
+
+            let total = 0;
+
+            carrinho.forEach((item, indice) => {
+                total += item.preco * item.quantidade;
+                lista.innerHTML += `
+            <div class="item-carrinho">
+                <span>${item.nome} (${item.quantidade}x)</span>
+                <span>R$ ${(item.preco * item.quantidade).toFixed(2)}</span>
+                <button onclick="removerItem(${indice})">
+                    X
+                </button>
+            </div>
+        `;
+            });
+            if (totalElemento) {
+                totalElemento.innerText = `Total: R$ ${total.toFixed(2)}`;
+            }
+        }
+
+        // Limpa todo o carrinho
+        function limparCarrinho() {
+            carrinho = [];
+            localStorage.removeItem("carrinho");
+            atualizarCarrinho();
+            exibirCarrinho();
+        }
+
+        // Finalizar compra
+        function finalizarCompra() {
+
+            if (carrinho.length === 0) {
+                alert("Seu carrinho está vazio!");
+                return;
+            }
+
+            alert("Compra finalizada com sucesso!");
+            limparCarrinho();
+        }
+
+        // Executa quando a página carregar
+        document.addEventListener("DOMContentLoaded", () => {
+
+            // Corrige carrinhos antigos que não possuem quantidade
+            carrinho.forEach(item => {
+                if (!item.quantidade) {
+                    item.quantidade = 1;
+                }
+            });
+
+            localStorage.setItem("carrinho", JSON.stringify(carrinho));
+            atualizarCarrinho();
+            exibirCarrinho();
+        });
+    </script>
+</body>
+
+</html>
