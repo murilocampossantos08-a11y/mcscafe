@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Painel administrativo demonstrativo do MCS Café."
+    />
+    <link rel="icon" href="/assets/imagens/logo.png" />
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <link rel="stylesheet" href="/assets/css/admin.css" />
+    <title>MCS Café | Painel administrativo</title>
+  </head>
+  <body class="admin-page">
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="site-header admin-header">
+      <div class="header-content">
+        <a class="brand" href="/" aria-label="MCS Café - site público">
+          <img src="/assets/imagens/logo.png" width="56" height="56" alt="" />
+          <span>MCS <strong>Café</strong></span>
+        </a>
+        <nav class="navbar admin-nav" aria-label="Navegação administrativa">
+          <a href="/admin" aria-current="page">Visão geral</a>
+          <a href="/admin/produtos">Produtos</a>
+          <a href="/admin/funcionarios">Funcionários</a>
+        </nav>
+        <a class="button button--secondary" href="/">Ver site</a>
+      </div>
+    </header>
+
+    <main id="conteudo" class="page-section">
+      <div class="page-container">
+        <p class="admin-notice">
+          <strong>Dados demonstrativos.</strong> Este painel não está conectado
+          ao banco de dados e não registra vendas reais.
+        </p>
+        <p class="eyebrow">Visão geral</p>
+        <h1>Vendas do dia</h1>
+        <div class="admin-grid" aria-label="Indicadores de vendas">
+          <article class="metric-card">
+            <p>Total de vendas</p>
+            <strong>39</strong>
+          </article>
+          <article class="metric-card">
+            <p>Faturamento</p>
+            <strong>R$ 487,50</strong>
+          </article>
+          <article class="metric-card">
+            <p>Clientes atendidos</p>
+            <strong>27</strong>
+          </article>
+          <article class="metric-card">
+            <p>Mais vendido</p>
+            <strong>Café coado</strong>
+          </article>
+        </div>
+        <section class="admin-card" aria-labelledby="chart-title">
+          <h2 id="chart-title">Produtos vendidos</h2>
+          <canvas
+            class="admin-chart"
+            data-sales-chart
+            aria-label="Gráfico de barras com vendas por produto"
+          ></canvas>
+        </section>
+      </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <script src="/assets/js/admin.js"></script>
+  </body>
+</html>

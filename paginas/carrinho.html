@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Carrinho de compras do MCS Café." />
+    <link rel="icon" href="/assets/imagens/logo.png" />
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <link rel="stylesheet" href="/assets/css/carrinho.css" />
+    <title>MCS Café | Carrinho</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="site-header">
+      <div class="header-content">
+        <a class="brand" href="/" aria-label="MCS Café - página inicial">
+          <img src="/assets/imagens/logo.png" width="56" height="56" alt="" />
+          <span>MCS <strong>Café</strong></span>
+        </a>
+        <nav class="navbar" aria-label="Navegação principal">
+          <a href="/">Início</a>
+          <a href="/paginas/sobre">Sobre</a>
+          <a href="/paginas/cardapio">Cardápio</a>
+          <a href="/paginas/avaliacoes">Avaliações</a>
+          <a href="/paginas/endereco">Endereço</a>
+        </nav>
+        <a
+          class="cart-link"
+          href="/paginas/carrinho"
+          aria-current="page"
+          aria-label="Abrir carrinho"
+        >
+          <img src="/assets/icones/carrinho.svg" alt="" />
+          <span class="cart-count" data-cart-count>0</span>
+        </a>
+      </div>
+    </header>
+
+    <main id="conteudo" class="page-section">
+      <div class="page-container cart-layout">
+        <section class="cart-panel" aria-labelledby="cart-title">
+          <p class="eyebrow">Seu pedido</p>
+          <h1 id="cart-title">Carrinho</h1>
+          <p>Os itens ficam salvos neste navegador enquanto você navega.</p>
+          <div class="cart-list" data-cart-list></div>
+        </section>
+        <aside class="cart-summary" aria-label="Resumo do pedido">
+          <h2>Resumo</h2>
+          <p>Valor total</p>
+          <p class="cart-summary__total" data-cart-total>R$ 0,00</p>
+          <button class="button" type="button" data-finish-order>
+            Finalizar pedido
+          </button>
+          <button
+            class="button button--secondary"
+            type="button"
+            data-clear-cart
+          >
+            Esvaziar carrinho
+          </button>
+          <p class="page-intro">
+            Demonstração: não há pagamento ou envio de pedido real.
+          </p>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__content">
+        <p>© <span data-current-year>2026</span> MCS Café.</p>
+        <div class="site-footer__links">
+          <a href="/login">Área administrativa</a>
+          <a href="/paginas/endereco">Contato</a>
+        </div>
+      </div>
+    </footer>
+    <script src="/assets/js/site.js"></script>
+    <script src="/assets/js/carrinho.js"></script>
+  </body>
+</html>

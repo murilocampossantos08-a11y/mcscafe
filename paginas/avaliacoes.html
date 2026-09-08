@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Avaliações de clientes do MCS Café." />
+    <link rel="icon" href="/assets/imagens/logo.png" />
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <title>MCS Café | Avaliações</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="site-header">
+      <div class="header-content">
+        <a class="brand" href="/" aria-label="MCS Café - página inicial">
+          <img src="/assets/imagens/logo.png" width="56" height="56" alt="" />
+          <span>MCS <strong>Café</strong></span>
+        </a>
+        <nav class="navbar" aria-label="Navegação principal">
+          <a href="/">Início</a>
+          <a href="/paginas/sobre">Sobre</a>
+          <a href="/paginas/cardapio">Cardápio</a>
+          <a href="/paginas/avaliacoes" aria-current="page">Avaliações</a>
+          <a href="/paginas/endereco">Endereço</a>
+        </nav>
+        <a
+          class="cart-link"
+          href="/paginas/carrinho"
+          aria-label="Abrir carrinho"
+        >
+          <img src="/assets/icones/carrinho.svg" alt="" />
+          <span class="cart-count" data-cart-count>0</span>
+        </a>
+      </div>
+    </header>
+
+    <main id="conteudo" class="page-section">
+      <div class="page-container section-heading">
+        <p class="eyebrow">Avaliações</p>
+        <h1>O que nossos clientes dizem</h1>
+      </div>
+      <section
+        class="page-container reviews"
+        aria-label="Carrossel de avaliações"
+      >
+        <article class="review-card" data-review-card>
+          <blockquote>
+            “Sensacional! Sou daquelas que não começa o dia sem um bom café, e
+            esse aqui superou muito. Dá para sentir que é diferente, sem aquele
+            amargor queimado.”
+          </blockquote>
+          <img
+            class="review-card__avatar"
+            src="/assets/imagens/pic-1.png"
+            alt="Foto de Paula Fernanda"
+          />
+          <h2>Paula Fernanda</h2>
+          <p class="stars" aria-label="5 de 5 estrelas">★★★★★</p>
+        </article>
+        <article class="review-card" data-review-card hidden>
+          <blockquote>
+            “O cheiro quando abre o pacote já entrega a qualidade. Dá de dez a
+            zero nos cafés comuns de mercado. Vale cada centavo.”
+          </blockquote>
+          <img
+            class="review-card__avatar"
+            src="/assets/imagens/pic-2.png"
+            alt="Foto de Derick Campos"
+          />
+          <h2>Derick Campos</h2>
+          <p class="stars" aria-label="5 de 5 estrelas">★★★★★</p>
+        </article>
+        <article class="review-card" data-review-card hidden>
+          <blockquote>
+            “Com certeza vou virar cliente fixo. Podem comprar sem medo!”
+          </blockquote>
+          <img
+            class="review-card__avatar"
+            src="/assets/imagens/pic-3.png"
+            alt="Foto de Carlos Alberto"
+          />
+          <h2>Carlos Alberto</h2>
+          <p class="stars" aria-label="5 de 5 estrelas">★★★★★</p>
+        </article>
+        <div class="review-controls">
+          <button
+            type="button"
+            data-review-previous
+            aria-label="Ver avaliação anterior"
+          >
+            ←
+          </button>
+          <button
+            type="button"
+            data-review-next
+            aria-label="Ver próxima avaliação"
+          >
+            →
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__content">
+        <p>© <span data-current-year>2026</span> MCS Café.</p>
+        <div class="site-footer__links">
+          <a href="/login">Área administrativa</a>
+          <a href="/paginas/endereco">Contato</a>
+        </div>
+      </div>
+    </footer>
+    <script src="/assets/js/site.js"></script>
+    <script src="/assets/js/carrinho.js"></script>
+    <script src="/assets/js/avaliacoes.js"></script>
+  </body>
+</html>

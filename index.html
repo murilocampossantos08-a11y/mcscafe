@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="MCS Café: cafés selecionados para transformar a sua pausa em experiência."
+    />
+    <link rel="icon" href="/assets/imagens/logo.png" />
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <title>MCS Café | Início</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="site-header">
+      <div class="header-content">
+        <a class="brand" href="/" aria-label="MCS Café - página inicial">
+          <img src="/assets/imagens/logo.png" width="56" height="56" alt="" />
+          <span>MCS <strong>Café</strong></span>
+        </a>
+        <nav class="navbar" aria-label="Navegação principal">
+          <a href="/" aria-current="page">Início</a>
+          <a href="/paginas/sobre">Sobre</a>
+          <a href="/paginas/cardapio">Cardápio</a>
+          <a href="/paginas/avaliacoes">Avaliações</a>
+          <a href="/paginas/endereco">Endereço</a>
+        </nav>
+        <a
+          class="cart-link"
+          href="/paginas/carrinho"
+          aria-label="Abrir carrinho"
+        >
+          <img src="/assets/icones/carrinho.svg" alt="" />
+          <span class="cart-count" data-cart-count>0</span>
+        </a>
+      </div>
+    </header>
+
+    <main id="conteudo">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__content">
+          <p class="eyebrow">MCS Café</p>
+          <h1 id="hero-title">O melhor da região</h1>
+          <p>
+            Nossa missão é transformar o seu momento do café em uma experiência
+            sensorial inesquecível. Selecionamos grãos de produtores parceiros e
+            buscamos uma torra fresca, com notas marcantes de chocolate,
+            caramelo e frutas amarelas.
+          </p>
+          <a class="button" href="/paginas/cardapio">Conheça o cardápio</a>
+        </div>
+      </section>
+
+      <section class="page-section">
+        <div class="page-container section-heading">
+          <p class="eyebrow">Escolha seu momento</p>
+          <h2>Cafés preparados para a sua pausa</h2>
+          <p>
+            Do café coado ao cold brew, o cardápio mantém as opções e valores do
+            projeto original.
+          </p>
+        </div>
+        <div class="page-container">
+          <a class="button button--secondary" href="/paginas/cardapio"
+            >Ver todos os produtos</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__content">
+        <p>© <span data-current-year>2026</span> MCS Café.</p>
+        <div class="site-footer__links">
+          <a href="/login">Área administrativa</a>
+          <a href="/paginas/endereco">Contato</a>
+        </div>
+      </div>
+    </footer>
+    <script src="/assets/js/site.js"></script>
+    <script src="/assets/js/carrinho.js"></script>
+  </body>
+</html>

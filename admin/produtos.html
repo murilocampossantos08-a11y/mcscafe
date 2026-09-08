@@ -1,74 +1,121 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="../admin.css">
-    <link rel="stylesheet" href="">
-    <title>cafés</title>
-</head>
-
-<body>
-    <header class="header">
-        <section>
-            <a href="produtos.html" class="logo">
-                <img width="50" height="50" src="../img/logo.png" alt="logo">
-            </a>
-
-            <nav class="navbar">
-                <a href="Produtos.html">produtos</a>
-                <a href="admin.html">vendas</a>
-                <a href="funcionarios.html">funcionarios</a>
-            </nav>
-            <a href="produtos.html" class="btn">adicionar</a>
-        </section>
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Produtos demonstrativos do painel do MCS Café."
+    />
+    <link rel="icon" href="/assets/imagens/logo.png" />
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <link rel="stylesheet" href="/assets/css/admin.css" />
+    <title>MCS Café | Produtos administrativos</title>
+  </head>
+  <body class="admin-page">
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="site-header admin-header">
+      <div class="header-content">
+        <a class="brand" href="/" aria-label="MCS Café - site público"
+          ><img
+            src="/assets/imagens/logo.png"
+            width="56"
+            height="56"
+            alt=""
+          /><span>MCS <strong>Café</strong></span></a
+        >
+        <nav class="navbar admin-nav" aria-label="Navegação administrativa">
+          <a href="/admin">Visão geral</a
+          ><a href="/admin/produtos" aria-current="page">Produtos</a
+          ><a href="/admin/funcionarios">Funcionários</a>
+        </nav>
+        <a class="button button--secondary" href="/">Ver site</a>
+      </div>
     </header>
-
-<script>const produtos = [
-      "Café Coado",
-      "Espresso",
-      "Mocha",
-      "Cappuccino",
-      "Cold Brew",
-      "Macchiato"
-    ];
-
-    const vendas = [20, 5, 2, 7, 1, 4];
-
-    const paletaCafe = [
-      '#d3ad7f',
-      '#b88e5d',
-      '#8c653d',
-      '#5c3d21',
-      '#3a2412',
-      '#f4e3c5'
-    ];
-
-    Chart.defaults.color = '#ffffff';
-    Chart.defaults.font.family = 'Outfit, sans-serif';
-
-    new Chart(document.getElementById("graficoProdutos"), {
-
-      type: "pie",
-      data: {
-        labels: produtos,
-        datasets: [{
-          label: "Quantidade Vendida",
-          data: vendas,
-          borderWidth: 1
-        }]
-      },
-
-      options: {
-        responsive: true,
-        plugins: {
-          legend: {
-            display: false
-          }
-        }
-      }
-});</script>
-</body>
+    <main id="conteudo" class="page-section">
+      <div class="page-container">
+        <p class="admin-notice">
+          <strong>Dados demonstrativos.</strong> Os botões abaixo não persistem
+          alterações sem backend.
+        </p>
+        <div class="button-group">
+          <div>
+            <p class="eyebrow">Catálogo</p>
+            <h1>Produtos</h1>
+          </div>
+          <button class="button" type="button" data-demo-action>
+            Novo produto
+          </button>
+        </div>
+        <section
+          class="admin-card admin-table-wrap"
+          aria-label="Tabela de produtos"
+        >
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th scope="col">Imagem</th>
+                <th scope="col">Produto</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Preço</th>
+                <th scope="col">Status</th>
+                <th scope="col">Ação</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><img src="/assets/imagens/menu-1.png" alt="" /></td>
+                <td><strong>Café coado</strong></td>
+                <td>Cafés</td>
+                <td>R$ 3,00</td>
+                <td><span class="status status--active">Ativo</span></td>
+                <td>
+                  <button
+                    class="button button--secondary"
+                    type="button"
+                    data-demo-action
+                  >
+                    Editar
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="/assets/imagens/menu-2.png" alt="" /></td>
+                <td><strong>Espresso</strong></td>
+                <td>Cafés</td>
+                <td>R$ 5,00</td>
+                <td><span class="status status--active">Ativo</span></td>
+                <td>
+                  <button
+                    class="button button--secondary"
+                    type="button"
+                    data-demo-action
+                  >
+                    Editar
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="/assets/imagens/menu-4.png" alt="" /></td>
+                <td><strong>Cappuccino</strong></td>
+                <td>Cafés</td>
+                <td>R$ 10,00</td>
+                <td><span class="status status--draft">Rascunho</span></td>
+                <td>
+                  <button
+                    class="button button--secondary"
+                    type="button"
+                    data-demo-action
+                  >
+                    Editar
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+    </main>
+    <script src="/assets/js/admin.js"></script>
+  </body>
 </html>

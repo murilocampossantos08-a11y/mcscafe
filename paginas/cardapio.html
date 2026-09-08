@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Cardápio do MCS Café." />
+    <link rel="icon" href="/assets/imagens/logo.png" />
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <title>MCS Café | Cardápio</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="site-header">
+      <div class="header-content">
+        <a class="brand" href="/" aria-label="MCS Café - página inicial">
+          <img src="/assets/imagens/logo.png" width="56" height="56" alt="" />
+          <span>MCS <strong>Café</strong></span>
+        </a>
+        <nav class="navbar" aria-label="Navegação principal">
+          <a href="/">Início</a>
+          <a href="/paginas/sobre">Sobre</a>
+          <a href="/paginas/cardapio" aria-current="page">Cardápio</a>
+          <a href="/paginas/avaliacoes">Avaliações</a>
+          <a href="/paginas/endereco">Endereço</a>
+        </nav>
+        <a
+          class="cart-link"
+          href="/paginas/carrinho"
+          aria-label="Abrir carrinho"
+        >
+          <img src="/assets/icones/carrinho.svg" alt="" />
+          <span class="cart-count" data-cart-count>0</span>
+        </a>
+      </div>
+    </header>
+
+    <main id="conteudo" class="page-section">
+      <div class="page-container section-heading">
+        <p class="eyebrow">Cardápio</p>
+        <h1>Encontre seu café</h1>
+        <p>
+          Escolha um produto para ver os detalhes ou adicione-o diretamente ao
+          carrinho.
+        </p>
+      </div>
+      <section
+        class="page-container product-grid"
+        aria-label="Produtos do cardápio"
+      >
+        <article class="product-card">
+          <a
+            class="product-card__image-link"
+            href="/paginas/produtos/cafe-coado"
+          >
+            <img
+              class="product-card__image"
+              src="/assets/imagens/menu-1.png"
+              alt="Café coado"
+            />
+          </a>
+          <div class="product-card__content">
+            <h2>Café coado</h2>
+            <div class="product-card__footer">
+              <p class="price">
+                <span class="old-price"><s>R$ 4,50</s></span
+                >R$ 3,00
+              </p>
+              <button
+                class="button"
+                type="button"
+                data-add-to-cart
+                data-product-name="Café coado"
+                data-product-price="3"
+              >
+                Adicionar
+              </button>
+            </div>
+          </div>
+        </article>
+        <article class="product-card">
+          <a class="product-card__image-link" href="/paginas/produtos/espresso">
+            <img
+              class="product-card__image"
+              src="/assets/imagens/menu-2.png"
+              alt="Espresso"
+            />
+          </a>
+          <div class="product-card__content">
+            <h2>Espresso</h2>
+            <div class="product-card__footer">
+              <p class="price">
+                <span class="old-price"><s>R$ 7,50</s></span
+                >R$ 5,00
+              </p>
+              <button
+                class="button"
+                type="button"
+                data-add-to-cart
+                data-product-name="Espresso"
+                data-product-price="5"
+              >
+                Adicionar
+              </button>
+            </div>
+          </div>
+        </article>
+        <article class="product-card">
+          <a class="product-card__image-link" href="/paginas/produtos/mocha">
+            <img
+              class="product-card__image"
+              src="/assets/imagens/menu-3.png"
+              alt="Mocha"
+            />
+          </a>
+          <div class="product-card__content">
+            <h2>Mocha</h2>
+            <div class="product-card__footer">
+              <p class="price">
+                <span class="old-price"><s>R$ 8,50</s></span
+                >R$ 6,00
+              </p>
+              <button
+                class="button"
+                type="button"
+                data-add-to-cart
+                data-product-name="Mocha"
+                data-product-price="6"
+              >
+                Adicionar
+              </button>
+            </div>
+          </div>
+        </article>
+        <article class="product-card">
+          <a
+            class="product-card__image-link"
+            href="/paginas/produtos/cappuccino"
+          >
+            <img
+              class="product-card__image"
+              src="/assets/imagens/menu-4.png"
+              alt="Cappuccino"
+            />
+          </a>
+          <div class="product-card__content">
+            <h2>Cappuccino</h2>
+            <div class="product-card__footer">
+              <p class="price">
+                <span class="old-price"><s>R$ 12,50</s></span
+                >R$ 10,00
+              </p>
+              <button
+                class="button"
+                type="button"
+                data-add-to-cart
+                data-product-name="Cappuccino"
+                data-product-price="10"
+              >
+                Adicionar
+              </button>
+            </div>
+          </div>
+        </article>
+        <article class="product-card">
+          <a
+            class="product-card__image-link"
+            href="/paginas/produtos/cold-brew"
+          >
+            <img
+              class="product-card__image"
+              src="/assets/imagens/menu-5.png"
+              alt="Cold Brew"
+            />
+          </a>
+          <div class="product-card__content">
+            <h2>Cold Brew</h2>
+            <div class="product-card__footer">
+              <p class="price">
+                <span class="old-price"><s>R$ 15,50</s></span
+                >R$ 13,00
+              </p>
+              <button
+                class="button"
+                type="button"
+                data-add-to-cart
+                data-product-name="Cold Brew"
+                data-product-price="13"
+              >
+                Adicionar
+              </button>
+            </div>
+          </div>
+        </article>
+        <article class="product-card">
+          <a
+            class="product-card__image-link"
+            href="/paginas/produtos/macchiato"
+          >
+            <img
+              class="product-card__image"
+              src="/assets/imagens/menu-6.png"
+              alt="Macchiato"
+            />
+          </a>
+          <div class="product-card__content">
+            <h2>Macchiato</h2>
+            <div class="product-card__footer">
+              <p class="price">
+                <span class="old-price"><s>R$ 20,50</s></span
+                >R$ 15,00
+              </p>
+              <button
+                class="button"
+                type="button"
+                data-add-to-cart
+                data-product-name="Macchiato"
+                data-product-price="15"
+              >
+                Adicionar
+              </button>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__content">
+        <p>© <span data-current-year>2026</span> MCS Café.</p>
+        <div class="site-footer__links">
+          <a href="/login">Área administrativa</a>
+          <a href="/paginas/endereco">Contato</a>
+        </div>
+      </div>
+    </footer>
+    <script src="/assets/js/site.js"></script>
+    <script src="/assets/js/carrinho.js"></script>
+  </body>
+</html>

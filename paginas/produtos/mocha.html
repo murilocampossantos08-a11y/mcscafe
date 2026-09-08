@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Mocha do MCS Café." />
+    <link rel="icon" href="/assets/imagens/logo.png" />
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <title>MCS Café | Mocha</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="site-header">
+      <div class="header-content">
+        <a class="brand" href="/" aria-label="MCS Café - página inicial"
+          ><img
+            src="/assets/imagens/logo.png"
+            width="56"
+            height="56"
+            alt=""
+          /><span>MCS <strong>Café</strong></span></a
+        >
+        <nav class="navbar" aria-label="Navegação principal">
+          <a href="/">Início</a><a href="/paginas/sobre">Sobre</a
+          ><a href="/paginas/cardapio" aria-current="page">Cardápio</a
+          ><a href="/paginas/avaliacoes">Avaliações</a
+          ><a href="/paginas/endereco">Endereço</a>
+        </nav>
+        <a
+          class="cart-link"
+          href="/paginas/carrinho"
+          aria-label="Abrir carrinho"
+          ><img src="/assets/icones/carrinho.svg" alt="" /><span
+            class="cart-count"
+            data-cart-count
+            >0</span
+          ></a
+        >
+      </div>
+    </header>
+    <main id="conteudo" class="page-section">
+      <section class="page-container product-detail">
+        <img
+          class="product-detail__image"
+          src="/assets/imagens/menu-3.png"
+          alt="Mocha"
+        />
+        <div class="product-detail__content">
+          <p class="eyebrow">Café do dia</p>
+          <h1>Mocha</h1>
+          <p>Café intenso, preparado com grãos selecionados.</p>
+          <p class="price">
+            <span class="old-price"><s>R$ 8,50</s></span
+            >R$ 6,00
+          </p>
+          <div class="button-group">
+            <button
+              class="button"
+              type="button"
+              data-add-to-cart
+              data-product-name="Mocha"
+              data-product-price="6"
+            >
+              Adicionar ao carrinho</button
+            ><a class="button button--secondary" href="/paginas/cardapio"
+              >Voltar ao cardápio</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="site-footer__content">
+        <p>© <span data-current-year>2026</span> MCS Café.</p>
+        <div class="site-footer__links">
+          <a href="/login">Área administrativa</a
+          ><a href="/paginas/endereco">Contato</a>
+        </div>
+      </div>
+    </footer>
+    <script src="/assets/js/site.js"></script>
+    <script src="/assets/js/carrinho.js"></script>
+  </body>
+</html>

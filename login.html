@@ -1,94 +1,68 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login.css">
-    <title>login da pagina</title>
-</head>
-
-<body>
-    <main class="login-container">
-        <div class="login-box">
-            <h1>MCS CAFÉ</h1>
-            <p>Faça login para acessar sua conta.</p>
-            <form>
-                <div class="input-box">
-                    <label>E-mail</label>
-                    <input type="email" placeholder="Digite seu e-mail">
-                </div>
-
-                <div class="input-box">
-                    <label>Senha</label>
-                    <input type="password" placeholder="Digite sua senha">
-                </div>
-
-                <div class="tipo-login">
-                    <label>
-                        <input type="radio" name="tipo" checked>
-                        Cliente
-                    </label>
-
-                    <label>
-                        <input type="radio" name="tipo">
-                        Administrador
-                    </label>
-                    
-                    <label>
-                        <input type="radio" name="tipo">
-                        Funcionário
-                    </label>
-                </div>
-
-                <button type="submit">
-                    Entrar
-                </button>
-                <a href="alterarSenha.html" class="esqueci">Esqueceu sua senha?</a>
-            </form>
-        </div>
-    </main>
-
-    <footer>
-        <a href="#" class="logo">
-            <img src="./img/logo.png" width="100px" alt="logo">
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Acesso demonstrativo à área administrativa do MCS Café."
+    />
+    <link rel="icon" href="/assets/imagens/logo.png" />
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <link rel="stylesheet" href="/assets/css/login.css" />
+    <title>MCS Café | Acesso administrativo</title>
+  </head>
+  <body>
+    <main class="login-main">
+      <section class="login-card" aria-labelledby="login-title">
+        <a
+          class="brand"
+          href="/"
+          aria-label="Voltar à página inicial do MCS Café"
+        >
+          <img src="/assets/imagens/logo.png" width="56" height="56" alt="" />
+          <span>MCS <strong>Café</strong></span>
         </a>
-        <p>© 2026-2026, mcscafé.com, Inc.</p>
-    </footer>
-    <script>document.addEventListener('DOMContentLoaded', () => {
-    const loginForm = document.getElementById('loginForm');
-
-    if (loginForm) {
-        loginForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            const email = document.getElementById('email').value;
-            const senha = document.getElementById('senha').value;
-
-            try {
-                const response = await fetch('/api/login', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ email, senha })
-                });
-
-                const data = await response.json();
-
-                if (data.success) {
-                    alert('Login efetuado com sucesso!');
-                    // Redirecione se desejar: window.location.href = 'dashboard.html';
-                } else {
-                    alert(data.message);
-                }
-            } catch (error) {
-                console.error('Erro na requisição:', error);
-                alert('Erro ao conectar com o servidor.');
-            }
-        });
-    }
-});</script>
-</body>
-
+        <h1 id="login-title">Área administrativa</h1>
+        <p class="login-notice">
+          Esta é uma demonstração visual. Nenhuma conta é autenticada e os dados
+          não são enviados para um servidor.
+        </p>
+        <form class="login-form" data-demo-login>
+          <label>
+            E-mail
+            <input
+              name="email"
+              type="email"
+              autocomplete="email"
+              placeholder="nome@exemplo.com"
+              required
+            />
+          </label>
+          <label>
+            Senha
+            <input
+              name="senha"
+              type="password"
+              autocomplete="current-password"
+              placeholder="Sua senha"
+              required
+            />
+          </label>
+          <label>
+            Tipo de acesso
+            <select name="perfil">
+              <option>Administrador</option>
+              <option>Funcionário</option>
+              <option>Cliente</option>
+            </select>
+          </label>
+          <button class="button" type="submit">Entrar na demonstração</button>
+          <p class="login-status" data-login-status role="status"></p>
+        </form>
+        <a class="button button--secondary" href="/">Voltar ao site</a>
+      </section>
+    </main>
+    <script src="/assets/js/login.js"></script>
+  </body>
 </html>
