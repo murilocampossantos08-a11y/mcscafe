@@ -1,0 +1,67 @@
+.login-main {
+  display: grid;
+  place-items: center;
+  padding: 3rem 1rem;
+  background:
+    linear-gradient(rgb(0 0 0 / 72%), rgb(0 0 0 / 82%)),
+    url("/assets/imagens/home-img.jpeg") center / cover;
+}
+
+.login-card {
+  width: min(100%, 29rem);
+  padding: 2rem;
+  border: var(--border);
+  border-radius: var(--radius);
+  background: rgb(19 19 26 / 95%);
+  box-shadow: var(--shadow);
+}
+
+.login-card .brand {
+  margin-bottom: 1.5rem;
+}
+
+.login-card h1 {
+  font-size: 2rem;
+}
+
+.login-card p {
+  color: var(--color-muted);
+}
+
+.login-notice {
+  padding: 0.7rem 0.85rem;
+  border-left: 3px solid var(--color-accent);
+  border-radius: 0.25rem;
+  background: rgb(211 173 127 / 10%);
+  font-size: 0.9rem;
+}
+
+.login-form {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.login-form label {
+  display: grid;
+  gap: 0.35rem;
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.login-form input,
+.login-form select {
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+  border: var(--border);
+  border-radius: 0.55rem;
+  background: #0f0f15;
+  color: var(--color-text);
+}
+
+.login-status {
+  min-height: 1.4rem;
+  margin: 0;
+  color: var(--color-accent) !important;
+  font-size: 0.9rem;
+}

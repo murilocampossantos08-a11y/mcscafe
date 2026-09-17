@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Funcionários demonstrativos do painel do MCS Café."
+    />
+    <link rel="icon" href="../assets/imagens/logo.png" />
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="../assets/css/admin.css" />
+    <title>MCS Café | Funcionários administrativos</title>
+  </head>
+  <body class="admin-page">
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="site-header admin-header">
+      <div class="header-content">
+        <a class="brand" href="/" aria-label="MCS Café - site público">
+          <img src="../assets/imagens/logo.png" width="56" height="56" alt=""/>
+          <span>MCS <strong>Café</strong></span>
+        </a>
+
+        <nav class="navbar admin-nav" aria-label="Navegação administrativa">
+          <a href="../admin/index.html">Visão geral</a>
+          <a href="../admin/produtos.html">Produtos</a>
+          <a href="../admin/funcionarios.html" aria-current="page">Funcionários</a>
+        </nav>
+        <a class="button button--secondary" href="../paginas/sobre.html">Ver site</a>
+      </div>
+    </header>
+    <main id="conteudo" class="page-section">
+      <div class="page-container">
+        <p class="admin-notice">
+         Selecione um funcionário para
+          ver um resumo de vendas.
+        </p>
+        <p class="eyebrow">Equipe</p>
+        <h1>Funcionários</h1>
+        <div class="admin-layout">
+          <section class="admin-card">
+            <div class="employee-list">
+              <article class="employee">
+                <img
+                  src="../assets/imagens/funcionario1.png"
+                  alt="Foto de Murilo Campos Santos"
+                />
+                <div>
+                  <h2>Murilo Campos Santos</h2>
+                  <p>Barista head</p>
+                </div>
+                <button
+                  class="button button--secondary"
+                  type="button"
+                  data-employee="murilo"
+                >
+                  Ver vendas
+                </button>
+              </article>
+              <article class="employee">
+                <span class="employee__initials" aria-hidden="true">AP</span>
+                <div>
+                  <h2>Ana Paula Silva</h2>
+                  <p>Atendente</p>
+                </div>
+                <button
+                  class="button button--secondary"
+                  type="button"
+                  data-employee="ana"
+                >
+                  Ver vendas
+                </button>
+              </article>
+              <article class="employee">
+                <span class="employee__initials" aria-hidden="true">CE</span>
+                <div>
+                  <h2>Carlos Eduardo</h2>
+                  <p>Caixa</p>
+                </div>
+                <button
+                  class="button button--secondary"
+                  type="button"
+                  data-employee="carlos"
+                >
+                  Ver vendas
+                </button>
+              </article>
+            </div>
+          </section>
+          <aside
+            class="admin-card employee-detail"
+            data-employee-detail
+            hidden
+            aria-live="polite"
+          >
+            <p class="eyebrow">Resumo do dia</p>
+            <h2 data-employee-name>Funcionário</h2>
+            <div class="employee-detail__metrics">
+              <p>Vendas<strong data-employee-sales>0</strong></p>
+              <p>Faturamento<strong data-employee-revenue>R$ 0,00</strong></p>
+              <p>Ticket médio<strong data-employee-ticket>R$ 0,00</strong></p>
+            </div>
+            <p class="page-intro">
+              Produto mais vendido: <strong data-employee-product>—</strong>
+            </p>
+          </aside>
+        </div>
+      </div>
+    </main>
+    <script src="../assets/js/admin.js"></script>
+  </body>
+</html>

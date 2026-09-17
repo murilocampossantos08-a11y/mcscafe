@@ -3,13 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="MCS Café: cafés selecionados para transformar a sua pausa em experiência."
-    />
+    <meta name="description" content="Conheça a proposta do MCS Café." />
     <link rel="icon" href="../assets/imagens/logo.png" />
     <link rel="stylesheet" href="../assets/css/base.css" />
-    <title>MCS Café | Início</title>
+    <title>MCS Café | Sobre</title>
   </head>
   <body>
     <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -20,8 +17,8 @@
           <span>MCS <strong>Café</strong></span>
         </a>
         <nav class="navbar" aria-label="Navegação principal">
-          <a href="/" aria-current="page">Início</a>
-          <a href="../paginas/sobre.html">Sobre</a>
+          <a href="../paginas/index.html">Início</a>
+          <a href="../paginas/sobre.html" aria-current="page">Sobre</a>
           <a href="../paginas/cardapio.html">Cardápio</a>
           <a href="../paginas/avaliacoes.html">Avaliações</a>
           <a href="../paginas/endereco.html">Endereço</a>
@@ -37,34 +34,33 @@
       </div>
     </header>
 
-    <main id="conteudo">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero__content">
-          <p class="eyebrow">MCS Café</p>
-          <h1 id="hero-title">O melhor da região</h1>
+    <main id="conteudo" class="page-section">
+      <div class="page-container section-heading">
+        <p class="eyebrow">Sobre nós</p>
+        <h1>O que faz nosso café especial</h1>
+      </div>
+      <section
+        class="page-container about-grid"
+        aria-label="A história do MCS Café"
+      >
+        <img
+          class="about-grid__image"
+          src="../assets/imagens/about-img.jpeg"
+          alt="Grãos de café e uma xícara preparada"
+        />
+        <div class="about-grid__content">
           <p>
-            Nossa missão é transformar o seu momento do café em uma experiência
-            sensorial inesquecível. Selecionamos grãos de produtores parceiros e
-            buscamos uma torra fresca, com notas marcantes de chocolate,
-            caramelo e frutas amarelas.
+            Cada grão que chega até a sua xícara carrega uma história de
+            dedicação, respeito à terra e paixão pelo verdadeiro café. Nossos
+            grãos são cultivados em altitudes ideais, selecionados manualmente e
+            torrados artesanalmente.
           </p>
-          <a class="button" href="../paginas/cardapio.html">Conheça o cardápio</a>
-        </div>
-      </section>
-
-      <section class="page-section">
-        <div class="page-container section-heading">
-          <p class="eyebrow">Escolha seu momento</p>
-          <h2>Cafés preparados para a sua pausa</h2>
           <p>
-            Do café coado ao cold brew, o cardápio mantém as opções e valores do
-            projeto original.
+            Acreditamos que o café vai além de uma bebida: é uma pausa, conexão
+            e energia para o seu dia. Trabalhamos com produtores parceiros para
+            trazer da fazenda para a sua mesa um sabor marcante.
           </p>
-        </div>
-        <div class="page-container">
-          <a class="button button--secondary" href="../paginas/cardapio.html"
-            >Ver todos os produtos</a
-          >
+          <a class="button" href="../paginas/cardapio.html">Escolher um café</a>
         </div>
       </section>
     </main>
@@ -73,8 +69,8 @@
       <div class="site-footer__content">
         <p>© <span data-current-year>2026</span> MCS Café.</p>
         <div class="site-footer__links">
-          <a href="../login.html">Área administrativa</a>
-          <a href="../paginas/endereco.html">Contato</a>
+          <a href="../login">Área administrativa</a>
+          <a href="../paginas/endereco">Contato</a>
         </div>
       </div>
     </footer>
