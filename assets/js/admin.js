@@ -19,7 +19,7 @@ function criarGraficoDeVendas() {
       datasets: [
         {
           label: "Unidades vendidas",
-          data: [20, 5, 2, 7, 1, 4],
+          data: [30, 10, 3, 7, 1, 4],
           backgroundColor: [
             "#d3ad7f",
             "#bd8e54",

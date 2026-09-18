@@ -174,13 +174,13 @@ select:focus-visible {
   place-items: center;
   width: 2.75rem;
   height: 2.75rem;
-  border: 1px solid rgb(211 173 127 / 55%);
+  border: 1px solid rgba(192, 112, 15, 0.822);
   border-radius: 0.7rem;
   color: var(--color-accent);
 }
 
 .cart-link:hover {
-  background: rgb(211 173 127 / 12%);
+  background: rgba(20, 228, 193, 0.12);
 }
 
 .cart-link img,
@@ -311,7 +311,7 @@ h2 {
       rgb(0 0 0 / 59%) 49%,
       rgb(0 0 0 / 20%) 100%
     ),
-    url("/assets/imagens/home-img.jpeg") center / cover;
+    url("..//imagens/home-img.jpeg") center / cover;
 }
 
 .hero__content {
