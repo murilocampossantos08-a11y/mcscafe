@@ -311,7 +311,7 @@ h2 {
       rgb(0 0 0 / 59%) 49%,
       rgb(0 0 0 / 20%) 100%
     ),
-    url("..//imagens/home-img.jpeg") center / cover;
+    url("../img/home-img.jpeg") center / cover;
 }
 
 .hero__content {
