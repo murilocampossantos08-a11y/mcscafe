@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Produtos do MCS Café." />
+    <link rel="icon" href="../assets/img/logo.png" />
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="../assets/css/admin.css" />
+    <title>MCS Café | Produtos administrativos</title>
+  </head>
+  <body class="admin-page">
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="site-header admin-header">
+      <div class="header-content">
+        <a class="brand" href="/" aria-label="MCS Café - site público">
+          <img src="../assets/img/logo.png" width="56" height="56" alt="" />
+          <span>MCS <strong>Café</strong></span>
+        </a>
+        <nav class="navbar admin-nav" aria-label="Navegação administrativa">
+        <a href="../admin/index.html">Visão geral</a>
+        <a href="../admin/pedidos.html">Pedidos</a>
+        <a href="../admin/produtos.html" aria-current="page">Produtos</a>
+        <a href="../admin/estoque.html">Estoque</a>
+        <a href="../admin/funcionarios.html">Funcionários</a>
+        <a href="../admin/avaliacoes.html">Avaliações</a>
+        </nav>
+        <a class="button button--secondary" href="/">Ver site</a>
+        <button class="button button--danger" type="button" data-sair>Sair</button>
+      </div>
+    </header>
+    <main id="conteudo" class="page-section">
+      <div class="page-container">
+        <div class="button-group">
+          <div>
+            <p class="eyebrow">Catálogo</p>
+            <h1>Produtos</h1>
+          </div>
+          <button class="button" type="button" data-action-novo-produto data-somente-admin>Novo produto</button>
+        </div>
+        <p class="admin-notice" data-admin-status role="status"></p>
+        <section class="admin-card admin-table-wrap" aria-label="Tabela de produtos">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th scope="col">Imagem</th>
+                <th scope="col">Produto</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Preço</th>
+                <th scope="col">Status</th>
+                <th scope="col">Ação</th>
+              </tr>
+            </thead>
+            <tbody data-produtos-lista></tbody>
+          </table>
+        </section>
+      </div>
+    </main>
+    <dialog class="admin-dialog" data-produto-dialog aria-labelledby="produto-dialog-titulo">
+      <form class="admin-form" data-produto-form method="dialog">
+        <h2 id="produto-dialog-titulo" data-produto-titulo>Novo produto</h2>
+        <label>Nome<input name="nome" type="text" minlength="2" maxlength="100" required /></label>
+        <label>Categoria<select name="categoria_id" data-categorias required></select></label>
+        <label>Preço (R$)<input name="preco" type="number" min="0.01" step="0.01" required /></label>
+        <label>Descrição<textarea name="descricao" maxlength="1000"></textarea></label>
+        <label>Caminho da imagem (opcional)<input name="imagem_url" type="text" placeholder="/assets/imagens/nome-da-foto.png" /></label>
+        <label class="admin-check"><input name="disponivel" type="checkbox" checked /> Disponível no cardápio</label>
+        <p class="form-message" data-produto-status role="status"></p>
+        <div class="button-group">
+          <button class="button" type="submit">Salvar</button>
+          <button class="button button--secondary" type="button" data-fechar-dialog>Cancelar</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/api-cliente.js"></script>
+    <script src="../assets/js/admin.js"></script>
+  </body>
+</html>

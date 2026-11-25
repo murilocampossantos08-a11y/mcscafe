@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Painel administrativo do MCS Café." />
+    <link rel="icon" href="../assets/img/logo.png" />
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="../assets/css/admin.css" />
+    <title>MCS Café | Painel administrativo</title>
+  </head>
+  <body class="admin-page">
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="site-header admin-header">
+      <div class="header-content">
+        <a class="brand" href="/" aria-label="MCS Café - site público">
+          <img src="../assets/img/logo.png" width="56" height="56" alt="" />
+          <span>MCS <strong>Café</strong></span>
+        </a>
+        <nav class="navbar admin-nav" aria-label="Navegação administrativa">
+        <a href="../admin/index.html" aria-current="page">Visão geral</a>
+        <a href="../admin/pedidos.html">Pedidos</a>
+        <a href="../admin/produtos.html">Produtos</a>
+        <a href="../admin/estoque.html">Estoque</a>
+        <a href="../admin/funcionarios.html">Funcionários</a>
+        <a href="../admin/avaliacoes.html">Avaliações</a>
+        </nav>
+        <a class="button button--secondary" href="/">Ver site</a>
+        <button class="button button--danger" type="button" data-sair>Sair</button>
+      </div>
+    </header>
+    <main id="conteudo" class="page-section">
+      <div class="page-container">
+        <p class="eyebrow">Visão geral</p>
+        <h1>Vendas do dia</h1>
+        <div class="admin-grid" aria-label="Indicadores de vendas">
+          <article class="metric-card">
+            <p>Total de vendas</p>
+            <strong data-metric-total>0</strong>
+          </article>
+          <article class="metric-card">
+            <p>Faturamento</p>
+            <strong data-metric-faturamento>R$ 0,00</strong>
+          </article>
+          <article class="metric-card">
+            <p>Clientes atendidos</p>
+            <strong data-metric-clientes>0</strong>
+          </article>
+          <article class="metric-card">
+            <p>Mais vendido</p>
+            <strong data-metric-mais-vendido>-</strong>
+          </article>
+        </div>
+        <section class="admin-card" aria-labelledby="chart-title">
+          <h2 id="chart-title">Produtos vendidos</h2>
+          <canvas class="admin-chart" data-sales-chart aria-label="Gráfico de barras com vendas por produto"></canvas>
+        </section>
+      </div>
+    </main>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/api-cliente.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <script src="../assets/js/admin.js"></script>
+  </body>
+</html>

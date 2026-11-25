@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Estoque de insumos do MCS Café." />
+    <link rel="icon" href="../assets/img/logo.png" />
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="../assets/css/admin.css" />
+    <title>MCS Café | Estoque</title>
+  </head>
+  <body class="admin-page">
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="site-header admin-header">
+      <div class="header-content">
+        <a class="brand" href="/" aria-label="MCS Café - site público">
+          <img src="../assets/img/logo.png" width="56" height="56" alt="" />
+          <span>MCS <strong>Café</strong></span>
+        </a>
+        <nav class="navbar admin-nav" aria-label="Navegação administrativa">
+        <a href="../admin/index.html">Visão geral</a>
+        <a href="../admin/pedidos.html">Pedidos</a>
+        <a href="../admin/produtos.html">Produtos</a>
+        <a href="../admin/estoque.html" aria-current="page">Estoque</a>
+        <a href="../admin/funcionarios.html">Funcionários</a>
+        <a href="../admin/avaliacoes.html">Avaliações</a>
+        </nav>
+        <a class="button button--secondary" href="/">Ver site</a>
+        <button class="button button--danger" type="button" data-sair>Sair</button>
+      </div>
+    </header>
+    <main id="conteudo" class="page-section">
+      <div class="page-container">
+        <div class="button-group">
+          <div>
+            <p class="eyebrow">Insumos</p>
+            <h1>Estoque</h1>
+          </div>
+          <button class="button" type="button" data-action-novo-insumo data-somente-admin>Novo insumo</button>
+        </div>
+        <p class="admin-notice" data-admin-status role="status"></p>
+        <section class="admin-card admin-table-wrap" aria-label="Tabela de estoque">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th scope="col">Insumo</th>
+                <th scope="col">Disponível</th>
+                <th scope="col">Mínimo</th>
+                <th scope="col">Situação</th>
+                <th scope="col">Ação</th>
+              </tr>
+            </thead>
+            <tbody data-estoque-lista></tbody>
+          </table>
+        </section>
+      </div>
+    </main>
+    <dialog class="admin-dialog" data-insumo-dialog aria-labelledby="insumo-dialog-titulo">
+      <form class="admin-form" data-insumo-form method="dialog">
+        <h2 id="insumo-dialog-titulo" data-insumo-titulo>Novo insumo</h2>
+        <label>Insumo<input name="nome_insumo" type="text" minlength="2" maxlength="50" required /></label>
+        <label>Quantidade disponível<input name="quantidade_disponivel" type="number" min="0" step="0.01" required /></label>
+        <label>Unidade de medida<input name="unidade_medida" type="text" maxlength="20" placeholder="kg, L, un" required /></label>
+        <label>Quantidade mínima<input name="quantidade_minima" type="number" min="0" step="0.01" required /></label>
+        <p class="form-message" data-insumo-status role="status"></p>
+        <div class="button-group">
+          <button class="button" type="submit">Salvar</button>
+          <button class="button button--secondary" type="button" data-fechar-dialog>Cancelar</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/api-cliente.js"></script>
+    <script src="../assets/js/admin.js"></script>
+  </body>
+</html>

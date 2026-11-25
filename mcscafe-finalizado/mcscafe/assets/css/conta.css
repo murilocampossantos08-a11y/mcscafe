@@ -1,0 +1,132 @@
+.account-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.account-column {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.account-card {
+  padding: 1.4rem;
+  border: var(--border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  box-shadow: var(--shadow);
+}
+
+.account-card h2 {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.account-card p {
+  color: var(--color-muted);
+}
+
+.account-avatar {
+  width: 6rem;
+  height: 6rem;
+  margin-bottom: 1rem;
+  border: 2px solid var(--color-accent);
+  border-radius: 50%;
+  background: #0f0f15;
+  object-fit: cover;
+}
+
+.account-form {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.account-form label {
+  display: grid;
+  gap: 0.35rem;
+  font-weight: 700;
+}
+
+.account-form input,
+.account-form select,
+.account-form textarea {
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+  border: var(--border);
+  border-radius: 0.55rem;
+  background: #0f0f15;
+  color: var(--color-text);
+}
+
+.account-form textarea {
+  min-height: 6rem;
+  resize: vertical;
+}
+
+.order-list,
+.favorite-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.order-card,
+.favorite-item {
+  display: grid;
+  gap: 0.5rem;
+  padding: 1rem;
+  border: var(--border);
+  border-radius: 0.7rem;
+  background: var(--color-surface-raised);
+}
+
+.order-card header,
+.favorite-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+.order-card ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--color-muted);
+}
+
+.order-status {
+  padding: 0.2rem 0.65rem;
+  border: 1px solid rgb(211 173 127 / 60%);
+  border-radius: 999px;
+  color: var(--color-accent);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.order-status--concluido {
+  border-color: rgb(120 200 140 / 60%);
+  color: #8fd6a2;
+}
+
+.order-status--cancelado {
+  border-color: rgb(240 120 120 / 60%);
+  color: var(--color-danger);
+}
+
+.star-select {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.status-panel {
+  max-width: 36rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  .account-layout {
+    grid-template-columns: 1fr;
+  }
+}

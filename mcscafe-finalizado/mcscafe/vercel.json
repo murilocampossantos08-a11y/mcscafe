@@ -1,0 +1,40 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "functions": {
+    "api/index.js": {
+      "maxDuration": 15,
+      "includeFiles": "backend/**"
+    }
+  },
+  "rewrites": [{ "source": "/api/:path*", "destination": "/api" }],
+  "redirects": [
+    { "source": "/cardapio", "destination": "/paginas/cardapio", "permanent": true },
+    { "source": "/sobre", "destination": "/paginas/sobre", "permanent": true },
+    { "source": "/avaliacoes", "destination": "/paginas/avaliacoes", "permanent": true },
+    { "source": "/carrinho", "destination": "/paginas/carrinho", "permanent": true },
+    { "source": "/endereco", "destination": "/paginas/endereco", "permanent": true },
+    { "source": "/produtos", "destination": "/admin/produtos", "permanent": true },
+    { "source": "/funcionarios", "destination": "/admin/funcionarios", "permanent": true },
+    { "source": "/pages/:path*", "destination": "/paginas/:path*", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)\\.(css|js)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }]
+    },
+    {
+      "source": "/assets/(.*)\\.(png|jpe?g|webp|svg|ico)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=604800" }]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    }
+  ]
+}

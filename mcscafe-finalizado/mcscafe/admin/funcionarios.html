@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Equipe do MCS Café." />
+    <link rel="icon" href="../assets/img/logo.png" />
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="../assets/css/admin.css" />
+    <title>MCS Café | Funcionários</title>
+  </head>
+  <body class="admin-page">
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="site-header admin-header">
+      <div class="header-content">
+        <a class="brand" href="/" aria-label="MCS Café - site público">
+          <img src="../assets/img/logo.png" width="56" height="56" alt="" />
+          <span>MCS <strong>Café</strong></span>
+        </a>
+        <nav class="navbar admin-nav" aria-label="Navegação administrativa">
+        <a href="../admin/index.html">Visão geral</a>
+        <a href="../admin/pedidos.html">Pedidos</a>
+        <a href="../admin/produtos.html">Produtos</a>
+        <a href="../admin/estoque.html">Estoque</a>
+        <a href="../admin/funcionarios.html" aria-current="page">Funcionários</a>
+        <a href="../admin/avaliacoes.html">Avaliações</a>
+        </nav>
+        <a class="button button--secondary" href="/">Ver site</a>
+        <button class="button button--danger" type="button" data-sair>Sair</button>
+      </div>
+    </header>
+    <main id="conteudo" class="page-section">
+      <div class="page-container">
+        <p class="admin-notice">Selecione um funcionário para ver um resumo de vendas do dia.</p>
+        <div class="button-group">
+          <div>
+            <p class="eyebrow">Equipe</p>
+            <h1>Funcionários</h1>
+          </div>
+          <button class="button" type="button" data-action-novo-funcionario data-somente-admin>Novo funcionário</button>
+        </div>
+        <p class="admin-notice" data-admin-status role="status"></p>
+        <div class="admin-layout">
+          <section class="admin-card">
+            <div class="employee-list" data-funcionarios-lista></div>
+          </section>
+          <aside class="admin-card employee-detail" data-employee-detail hidden aria-live="polite">
+            <p class="eyebrow">Resumo do dia</p>
+            <h2 data-employee-name>Funcionário</h2>
+            <div class="employee-detail__metrics">
+              <p>Vendas<strong data-employee-sales>0</strong></p>
+              <p>Faturamento<strong data-employee-revenue>R$ 0,00</strong></p>
+              <p>Ticket médio<strong data-employee-ticket>R$ 0,00</strong></p>
+            </div>
+            <p class="page-intro">Produto mais vendido: <strong data-employee-product>—</strong></p>
+          </aside>
+        </div>
+      </div>
+    </main>
+    <dialog class="admin-dialog" data-funcionario-dialog aria-labelledby="funcionario-dialog-titulo">
+      <form class="admin-form" data-funcionario-form method="dialog">
+        <h2 id="funcionario-dialog-titulo">Novo funcionário</h2>
+        <label>Nome<input name="nome" type="text" minlength="2" maxlength="50" required /></label>
+        <label>E-mail<input name="email" type="email" required /></label>
+        <label>Telefone<input name="telefone" type="tel" /></label>
+        <label>Senha inicial<input name="senha" type="password" minlength="8" autocomplete="new-password" required /></label>
+        <label>Cargo
+          <select name="cargo_id">
+            <option value="2">Atendente</option>
+            <option value="3">Administrador</option>
+          </select>
+        </label>
+        <p class="form-message" data-funcionario-status role="status"></p>
+        <div class="button-group">
+          <button class="button" type="submit">Salvar</button>
+          <button class="button button--secondary" type="button" data-fechar-dialog>Cancelar</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/api-cliente.js"></script>
+    <script src="../assets/js/admin.js"></script>
+  </body>
+</html>

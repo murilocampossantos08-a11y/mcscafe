@@ -1,0 +1,38 @@
+{
+  "name": "mcscafe",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site e sistema do MCS Café.",
+  "scripts": {
+    "dev": "node scripts/dev-server.mjs",
+    "start": "node backend/servidor.js",
+    "check": "node scripts/check-project.mjs",
+    "test": "npm run check",
+    "test:api": "node --test backend/testes/*.test.js",
+    "banco:iniciar": "node backend/scripts/iniciar-banco.js",
+    "admin:criar": "node backend/scripts/criar-admin.js",
+    "sincronizar": "node scripts/sincronizar-inicio.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.8",
+    "express": "^5.3.0",
+    "express-rate-limit": "^8.0.0",
+    "jsonwebtoken": "^9.0.3",
+    "mercadopago": "^3.6.1",
+    "mysql2": "^3.24.5",
+    "nodemailer": "^10.0.15"
+  },
+  "main": "backend/servidor.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

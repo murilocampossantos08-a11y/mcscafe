@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Recuperação de senha do MCS Café." />
+    <link rel="icon" href="./assets/imagens/logo.png" />
+    <link rel="stylesheet" href="./assets/css/base.css" />
+    <link rel="stylesheet" href="./assets/css/login.css" />
+    <title>MCS Café | Recuperar senha</title>
+  </head>
+  <body>
+    <main class="login-main">
+      <section class="login-card" aria-labelledby="senha-title">
+        <a class="brand" href="/" aria-label="Voltar à página inicial do MCS Café">
+          <img src="./assets/imagens/logo.png" width="56" height="56" alt="" />
+          <span>MCS <strong>Café</strong></span>
+        </a>
+        <h1 id="senha-title">Recuperar</h1>
+        <form class="login-form" data-recuperar-solicitar>
+          <label>
+            E-mail
+            <input name="email" type="email" autocomplete="email" placeholder="nome@exemplo.com" required />
+          </label>
+          <button class="button" type="submit">Enviar código</button>
+          <p class="login-status" data-recuperar-status role="status"></p>
+        </form>
+        <form class="login-form" data-recuperar-redefinir hidden>
+          <input name="email" type="hidden" />
+          <label>
+            Código recebido
+            <input name="codigo" type="text" inputmode="numeric" maxlength="6" autocomplete="one-time-code" placeholder="000000" required />
+          </label>
+          <label>
+            Nova senha
+            <input name="novaSenha" type="password" minlength="8" autocomplete="new-password" placeholder="Mínimo de 8 caracteres" required />
+          </label>
+          <label>
+            Confirmar nova senha
+            <input name="confirmar" type="password" minlength="8" autocomplete="new-password" required />
+          </label>
+          <button class="button" type="submit">Alterar senha</button>
+          <p class="login-status" data-redefinir-status role="status"></p>
+          <a class="button button--secondary" href="./login.html" data-voltar-login hidden>Ir para o login</a>
+        </form>
+        <a class="button button--secondary" href="./login.html">Voltar ao login</a>
+      </section>
+    </main>
+    <script src="./assets/js/config.js"></script>
+    <script src="./assets/js/api-cliente.js"></script>
+    <script src="./assets/js/senha.js"></script>
+  </body>
+</html>
