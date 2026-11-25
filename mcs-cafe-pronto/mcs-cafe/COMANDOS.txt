@@ -1,0 +1,12 @@
+INSTALAR E RODAR (Expo Go)
+unzip mcs-cafe-pronto.zip
+cd mcs-cafe
+./setup.sh            (Windows: setup.bat)
+cd ../mcs-cafe-app
+(preencha o .env com as chaves do Firebase)
+npx expo start -c
+
+GERAR O APK (nuvem do Expo)
+npm install -g eas-cli
+eas login
+eas build -p android --profile preview
